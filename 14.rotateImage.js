@@ -10,9 +10,12 @@ let rotateImageV2 = (input) => {
 
   for (let i = 0; i <= n; i++) {
     for (let j = 0; j <= n / 2; j++) {
-      const temp = input[i][j];
-      input[i][j] = input[i][n - j];
-      input[i][n - j] = temp;
+      if (j !== n - j) {
+        const temp = input[i][j];
+        input[i][j] = input[i][n - j];
+        input[i][n - j] = temp;
+        count++;
+      }
     }
   }
 };
